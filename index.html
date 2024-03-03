@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness aplikace</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="my-3 p-1 m-auto fw-bold bg-white rounded text-center col-12 col-lg-4">Rád tě tu vidím! 👋</h1>
+  
+    <div class="row">
+      <div class="col-md-6 my-3 my-lg-0">
+        <div class="cardd bg-white rounded text-center p-3 h-100 d-flex justify-content-center">
+          <div class="d-flex flex-column justify-content-center h-100">
+            <h4 class="fw-bold">Celkový čas všech aktivit</h4>
+            <div class="circle-border">
+              <h4 class="fw-bold"><span id="totalTime">0</span> minut</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+      <div class="col-md-6">
+        <div class="cardd bg-white p-3 rounded h-100">
+          <h4 class="card-header fw-bold">Cíle</h4>
+          <form id="goalForm">
+            <div class="mb-3">
+              <label for="weeklyGoal" class="form-label fw-bold">Týdenní cíl (v minutách)</label>
+              <input type="number" class="form-control" id="weeklyGoal" placeholder="Zadejte týdenní cíl" required>
+            </div>
+            <button type="submit" class="tlacitko-primarni">Nastavit cíl</button>
+          </form>
+          <div class="mt-3">
+            <h5 class="fw-bold">Postup k dosažení cíle</h5>
+            <div class="progress">
+              <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="mt-2"><span id="progressText">0</span> minut z <span id="goalText">0</span> minut</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 my-3">
+        <div class="cardd bg-white p-3 rounded h-100">
+          <h4 class="card-header fw-bold">Aktivity v týdnu</h4>
+          <button type="button" class="tlacitko-primarni mt-3" data-bs-toggle="modal" data-bs-target="#addActivityModal">Přidat aktivitu</button>
+          <div class="card-body">
+            <ul id="activityList" class="list-group mt-3">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="modal fade" id="addActivityModal" tabindex="-1" aria-labelledby="addActivityModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="addActivityModalLabel">Přidat aktivitu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="activityForm">
+                  <div class="mb-3">
+                    <label for="activityName" class="form-label fw-bold py-2">Název aktivity</label>
+                    <input type="text" class="form-control" id="activityName" placeholder="běh, posilování, jízda na kole..." required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="activityDay" class="form-label fw-bold">Den v týdnu</label>
+                    <select class="form-select" id="activityDay" required>
+                      <option value="" disabled selected>Vyberte den</option>
+                      <option value="Pondělí">Pondělí</option>
+                      <option value="Úterý">Úterý</option>
+                      <option value="Středa">Středa</option>
+                      <option value="Čtvrtek">Čtvrtek</option>
+                      <option value="Pátek">Pátek</option>
+                      <option value="Sobota">Sobota</option>
+                      <option value="Neděle">Neděle</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="activityTime" class="form-label fw-bold">Čas aktivity v minutách</label>
+                    <input type="text" class="form-control" id="activityTime" placeholder="Zadejte čas aktivity" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="activityNotes" class="form-label fw-bold">Poznámky</label>
+                    <textarea class="form-control" id="activityNotes" placeholder="Přidejte poznámky k této aktivitě" style="resize: none;"></textarea>
+                  </div>          
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                <button type="submit" form="activityForm" class="btn btn-primary">Přidat</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripty.js"></script>
+</body>
+</html>

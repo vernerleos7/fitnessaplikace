@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: "Inter", sans-serif;
+}
+
+
+body {
+    background-color: #655d72;
+    background-image: linear-gradient(147deg, #655d72 0%, #898196 74%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #282C35 !important;
+    min-height: 100vh;
+}
+
+
+
+.cardd {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.circle-border {
+    border: 4px solid #57ff9d;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.tlacitko-primarni {
+    background-color: #6072ff;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tlacitko-primarni:hover {
+    background-color: #a0abff;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border: 2px solid #a0abff;
+    border-radius: 5px;
+    font-weight: bold;
+}
